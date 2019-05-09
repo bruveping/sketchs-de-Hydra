@@ -1,0 +1,40 @@
+ // ángel mariano jara o //https://github.com/bruveping
+ // Type some code on a new line (such as "osc().out()"), and press CTRL+shift+enter
+
+a.show()
+//SOUND
+
+a.setScale (10  )
+a.setBins (6)
+//
+a.settings[0].cutoff = 1
+a.settings[1].cutoff = 2
+a.settings[2].cutoff = 4
+a.settings[3].cutoff = 6
+a.settings[4].cutoff = 8
+
+s0.initCam()
+
+src(s0)
+.kaleid(6)
+  .repeatX(3)      
+  .repeatY(3)
+  .modulate(
+  noise( 3, 0.05, 1 )
+  .rotate( 6 )
+)
+  .out(o1)
+
+
+osc(12,0.05,1).kaleid(5)
+.mult( shape(5,0.5,0.5) 
+   .luma()
+   .repeatX(5)      
+  .repeatY(5))
+.modulate(
+  noise( 4, ()=> a.fft[4]*0.2 +0.5, 1 )
+  .rotate( 6 )
+)
+.diff(o1)
+  .out(o0)
+render (o0)
