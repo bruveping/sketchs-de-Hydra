@@ -1,0 +1,5 @@
+voronoi(12,12,() => a.fft[0]*2)
+.mult(osc(() => a.fft[0]*12,2,1).kaleid(() => a.fft[0]*20))
+.scale(() => a.fft[0]*0.2)
+.modulate(voronoi(8,1).scale(() => a.fft[0]*0.2),0.088)
+.out()
