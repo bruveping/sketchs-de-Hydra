@@ -1,0 +1,13 @@
+ //Ángel Jara
+noise(a.fft[0]*3,2,1).colorama()
+noise()
+.rotate().mask(shape(()=> a.fft[0]*10))
+.colorama(3)
+.modulateScale(o0)
+.modulateScale(o0,a.fft[0]*3)
+.blend(o0)
+.blend(o0)
+.blend(o0)
+.blend(o0)
+//.pixelate(30,30)
+.out()
