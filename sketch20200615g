@@ -1,0 +1,8 @@
+osc(7,-0.125,()=>a.fft[0]*3)
+.luma(0.158)
+.modulate(noise(20))
+.pixelate()
+.modulate(noise(120))
+.kaleid(3)
+.rotate(0,0.3)
+.out()
