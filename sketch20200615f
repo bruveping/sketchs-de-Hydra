@@ -1,0 +1,11 @@
+osc(4,0.2,10)
+.modulate(voronoi(30,2,2))
+.out(o1)
+
+shape(5,0.001,2)
+.modulate(noise(20,1,1).rotate(0.1,()=>a.fft[0]*1).mask(shape(20,0.8)))
+.blend(o1)
+.kaleid(5)
+.pixelate()
+.modulate(noise(30,3,1))
+.out(o0)
